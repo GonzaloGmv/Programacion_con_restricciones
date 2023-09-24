@@ -5,7 +5,6 @@ solver = cp_model.CpSolver()
 
 numero = model.NewIntVar(0, 99999, 'numero')
 
-
 # es multiplo de 7 y de 13
 model.AddModuloEquality(0, numero, 7)
 model.AddModuloEquality(0, numero, 13)
@@ -24,7 +23,9 @@ model.Add(numero > 51000)
 model.Add(numero+3876543 < 3930146)
 model.Add(numero+3876543 > 3928595)
 
-
+# la raiz del numero es menor que mi codigo postal
+# codigo postal: 229
+model.Add(numero <= 229*229)
 
 class PrintSolutions(cp_model.CpSolverSolutionCallback):
     """Callback to print every solution."""
