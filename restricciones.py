@@ -10,6 +10,22 @@ numero = model.NewIntVar(0, 99999, 'numero')
 model.AddModuloEquality(0, numero, 7)
 model.AddModuloEquality(0, numero, 13)
 
+# el primer digito es 5
+model.AddDivisionEquality(5, numero, 10000)
+
+# el segundo digito es menor que 6 y mayor que 1
+model.Add(numero < 56000)
+model.Add(numero > 51000)
+
+# la suma del numero y mi dni es menor que el dni de mi hermano menor pero mayor que el dni de mi primo
+# nuestro dni: 03876543
+# dni hermano menor: 03930051
+# dni primo: 03928595
+model.Add(numero+3876543 < 3930146)
+model.Add(numero+3876543 > 3928595)
+
+
+
 class PrintSolutions(cp_model.CpSolverSolutionCallback):
     """Callback to print every solution."""
     def __init__(self, variable):
