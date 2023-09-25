@@ -3,11 +3,11 @@ El link al repositorio es el siguiente: [github](https://github.com/GonzaloGmv/P
 
 Los participantes somos: 
 
-Gonzalo Martínez
+- Gonzalo Martínez
 
-MIguel González
+- MIguel González
 
-Ignacio Pedrero
+- Ignacio Pedrero
 
 El código es el siguiente:
 ```
